@@ -41,6 +41,45 @@ export function NavMenu() {
   )
 }
 
+export function MyNavBar() {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  })
+  console.log('pathname: ', pathname)
+  const routes = [
+    {
+      name: 'Home',
+      route: '/',
+    },
+    {
+      name: 'Projects',
+      route: '/projects',
+    },
+    {
+      name: 'About',
+      route: '/about',
+    },
+  ]
+  return (
+    <div className="p-2 flex items-center gap-3 bg-bg-light rounded-4xl">
+      {routes.map((route, idx) => (
+        <Link
+          to={route.route}
+          key={idx}
+          className="flex-1 hover:scale-97 transition-all duration-100 ease-in"
+        >
+          <Button
+            variant="outline"
+            className={`p-2! w-full! sm:p-5! rounded-4xl sm:rounded-4xl text-xs sm:text-sm lg:text-[18px] manrope bg-transparent border-none hover:text- ${pathname === route.route ? 'text-primary underline' : 'text-black'}`}
+          >
+            {route.name}
+          </Button>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">

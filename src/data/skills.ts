@@ -10,7 +10,7 @@ export interface SkillData {
 
 export const mySkills: SkillData[] = [
   {
-    cat: 'ML',
+    cat: 'Machine Learning',
     sks: [
       {
         name: 'Python',
@@ -48,7 +48,7 @@ export const mySkills: SkillData[] = [
     ],
   },
   {
-    cat: 'Mobile Dev.',
+    cat: 'Mobile Development',
     sks: [
       {
         name: 'Flutter',
@@ -61,7 +61,7 @@ export const mySkills: SkillData[] = [
     ],
   },
   {
-    cat: 'Web Dev.',
+    cat: 'Web Development',
     sks: [
       {
         name: 'React(TypeScript)',

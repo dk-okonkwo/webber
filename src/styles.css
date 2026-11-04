@@ -30,7 +30,7 @@ code {
   /* hsl (fallback color) */
   --bg-dark: hsl(238 100% 98%);
   --bg: hsl(238 100% 100%);
-  --bg-light: hsl(238 100% 100%);
+  --bg-light: oklch(1 0.1 297);;
   --text: hsl(265 100% 11%);
   --text-muted: hsl(249 51% 40%);
   --highlight: hsl(240 100% 100%);
@@ -48,7 +48,7 @@ code {
   /* oklch */
   --bg-dark: oklch(0.92 0.08 283);
   --bg: oklch(0.96 0.08 283);
-  --bg-light: oklch(1 0.08 283);
+  --bg-light: oklch(1 0.1 297);;
   --text: oklch(0.15 0.16 283);
   --text-muted: oklch(0.4 0.16 283);
   --highlight: oklch(1 0.16 283);
@@ -124,7 +124,7 @@ code {
   /* hsl (fallback color) */
   --bg-dark: hsl(252 100% 5%);
   --bg: hsl(252 91% 9%);
-  --bg-light: hsl(249 63% 14%);
+  --bg-light: oklch(1 0.1 297);;
   --text: hsl(238 100% 100%);
   --text-muted: hsl(239 69% 80%);
   --highlight: hsl(245 43% 52%);
@@ -142,7 +142,7 @@ code {
   /* oklch */
   --bg-dark: oklch(0.1 0.08 283);
   --bg: oklch(0.15 0.08 283);
-  --bg-light: oklch(0.2 0.08 283);
+  --bg-light: oklch(1 0.1 297);
   --text: oklch(0.96 0.1 283);
   --text-muted: oklch(0.76 0.1 283);
   --highlight: oklch(0.5 0.16 283);

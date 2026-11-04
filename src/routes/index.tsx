@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { marked } from 'marked'
 
 import { createFileRoute } from '@tanstack/react-router'
-import { allJobs, allEducations } from 'content-collections'
+// import { allJobs, allEducations } from 'content-collections'
 import { Card, CardContent, CardHeader, CardTitle } from '#/components/ui/card'
 import { Checkbox } from '#/components/ui/checkbox'
 import { Badge } from '#/components/ui/badge'
@@ -14,17 +14,26 @@ import {
 } from '#/components/ui/hover-card'
 
 import ResumeAssistant from '#/components/ResumeAssistant'
-import ProfileCard from '#/components/profile-card'
+import ProfileCard, { NewProfileCard } from '#/components/profile-card'
 import SkillsCard from '#/components/skills-card'
+import { hostname } from 'zod'
 
 export const Route = createFileRoute('/')({
-  component: App,
+  component: Home,
 })
 
 function App() {
-  return <div className='self-center m-auto sm:mt-5 w-full h-full lg:w-[87%] md:h-full flex flex-col md:flex-row gap-6 lg:gap-10 p-3 lg:p-8 md:py-3 overflow-hidden overflow-y-auto md:overflow-y-hidden'>
-    <ProfileCard />
-    <SkillsCard/>
+  return (
+    <div className="self-center m-auto sm:mt-5 w-full h-full lg:w-[87%] md:h-full flex flex-col md:flex-row gap-4 lg:gap-10 p-3 lg:p-8 md:py-3 overflow-hidden overflow-y-auto md:overflow-y-hidden">
+      <ProfileCard />
+      <SkillsCard />
+    </div>
+  )
+}
+
+function Home() {
+  return <div className='bg-purple-200 w-full flex gap-4 justify-center'>
+    <NewProfileCard/>
   </div>
 }
 

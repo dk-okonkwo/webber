@@ -2,12 +2,14 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 // import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 // import { TanStackDevtools } from '@tanstack/react-devtools'
 // import Footer from '../components/Footer'
-import Header, { NavMenu } from '../components/Header'
+import Header, { NavMenu, MyNavBar } from '../components/Header'
 import ThemeToggle from '../components/ThemeToggle'
+import myBg from '../assets/images/plain-bg-1.jpg'
 
 import appCss from '../styles.css?url'
 import { useWindowSize } from '#/utils/UI-functions'
 import { useEffect, useState } from 'react'
+import { Button } from '#/components/ui/button'
 
 const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
 
@@ -22,7 +24,7 @@ export const Route = createRootRoute({
         content: 'size.width=device-size.width, initial-scale=1',
       },
       {
-        title: "Charlotte's Web"
+        title: "Charlotte's Web",
       },
     ],
     links: [
@@ -96,20 +98,35 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body
         className="antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)] bg-bg-dark overflow-hidden h-svh w-vw flex items-center justify-center relative"
         suppressHydrationWarning={true}
+        style={{
+          background: `url(${myBg})`,
+          backgroundSize: 'cover',
+        }}
       >
-        <NavMenu />
-        <svg
+        {/* <NavMenu /> */}
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-[calc(100svh-50px)] w-[calc(100vw-50px)] pointer-events-none p-0! hidden absolute sm:flex"
           viewBox={vBox}
           fill="none"
         >
           <path d={path ? path : undefined} className="fill-bg" />
-        </svg>
+        </svg> */}
 
         {/* Shell */}
-        <div className="w-[calc(100vw-30px)] h-[calc(100svh-60px)] mt-auto sm:w-[calc(100vw-50px)] sm:mt-0 sm:h-[calc(100svh-50px)] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] bg-bg sm:bg-bg/0 sm:p-8 lg:p-12 relative flex">
+        {/* <div className="w-[calc(100vw-30px)] h-[calc(100svh-60px)] mt-auto sm:w-[calc(100vw-50px)] sm:mt-0 sm:h-[calc(100svh-50px)] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] bg-bg sm:bg-bg/0 sm:p-8 lg:p-12 relative flex">
           <ThemeToggle />
+          {children}
+        </div> */}
+
+        {/* Shell and Child 2 */}
+        <div className="w-full h-svh p-5 flex flex-col gap-4 overflow-hidden">
+          {/* header */}
+          <header className="p-2 w-full flex items-center justify-between">
+            <Button>Me</Button>
+            <MyNavBar />
+            <Button>CV</Button>
+          </header>
           {children}
         </div>
 

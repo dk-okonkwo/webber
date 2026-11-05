@@ -2,6 +2,7 @@ import { Github, Instagram, Linkedin, LucideLinkedin } from 'lucide-react'
 import head from '../assets/images/IMG_1480.jpg'
 import gem from '../assets/images/gem-img.jpeg'
 import * as motion from 'motion/react-client'
+import SocialBar from './social-bar'
 
 export default function ProfileCard() {
   return (
@@ -55,7 +56,7 @@ export default function ProfileCard() {
 
 export function NewProfileCard() {
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-3 max-w-90">
       {/* Image and Name */}
       <div className="relative p-2">
         <img
@@ -64,19 +65,19 @@ export function NewProfileCard() {
           className="w-50 aspect-square rounded-full border-5 border-bg-light object-cover"
         />
         <motion.span
-          className="manrope font-bold p-2 px-3 bg-bg-light rounded-3xl absolute -right-25 bottom-25"
+          className="manrope font-bold p-1 px-3 bg-bg-light rounded-3xl absolute -right-25 bottom-25"
           animate={{ rotate: -30 }}
           transition={{ duration: 1 }}
         >
-          David Okonkwo
+          David Okonkwo 😁
         </motion.span>
       </div>
       {/* Description */}
-      <h1 className="text-3xl manrope font-semibold text-text">
+      <h1 className="text-3xl manrope font-semibold text-text text-center">
         Building solutions, one line of code at a time.
       </h1>
       {/* Social Links */}
-      <div></div>
+      <SocialBar />
     </div>
   )
 }

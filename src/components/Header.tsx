@@ -70,7 +70,7 @@ export function MyNavBar() {
         >
           <Button
             variant="outline"
-            className={`p-2! w-full! sm:p-5! rounded-4xl sm:rounded-4xl text-xs sm:text-sm lg:text-[18px] manrope bg-transparent border-none hover:text- ${pathname === route.route ? 'text-primary underline' : 'text-black'}`}
+            className={`p-2! w-full! sm:p-5! rounded-4xl sm:rounded-4xl text-xs sm:text-sm lg:text-[16px] manrope underline-offset-6 border-none hover:underline hover:bg-purple-400/30 ${pathname === route.route ? 'text-purple-800 underline underline-offset-6 bg-purple-400/30' : 'text-black'}bg-transparent`}
           >
             {route.name}
           </Button>

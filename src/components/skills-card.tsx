@@ -6,7 +6,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 export default function SkillsCard() {
   return (
@@ -50,7 +56,7 @@ export default function SkillsCard() {
             <CarouselItem key={index}>
               <div className="p-0 sm:p-1">
                 <Card className="h-[40svh] max-h-75 min-h-70 sm:h-100 p-3 gap-2 sm:gap-6">
-                  <CardHeader className='p-0 sm:px-5'>
+                  <CardHeader className="p-0 sm:px-5">
                     <CardTitle className="krona text-text text-sm sm:text-lg">
                       {skill.cat}
                     </CardTitle>
@@ -88,6 +94,41 @@ export default function SkillsCard() {
         {/* <CarouselPrevious className="-left-8" /> */}
         {/* <CarouselNext className="-right-8" /> */}
       </Carousel>
+    </div>
+  )
+}
+
+export function SkillsSection() {
+  return (
+    <div className="max-w-80/100 p-2 grid gap-2 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+      {mySkills.map((skill, idx) => (
+        <Card key={idx} className="h-60 p-1.5 gap-2">
+          <CardHeader className="px-4">
+            <CardDescription className='manrope font-semibold text-text-muted'>{skill.cat}</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-4 p-0 sm:px-5 manrope text-text-muted font-bold flex-1 text-sm sm:text-md">
+            {skill.sks.map((item, index) => (
+              <div key={index} className="flex flex-col gap-0.5 w-full">
+                <span>{item.name}</span>
+                <div className="p-[3px] bg-muted w-55 rounded-xl flex gap-1">
+                  {Array.from({ length: Number(item.val) }).map((_, id) => (
+                    <div
+                      key={id}
+                      className="flex-1 h-1.5 bg-purple-400 rounded-md"
+                    />
+                  ))}
+                  {Array.from({ length: 5 - Number(item.val) }).map((_, id) => (
+                    <div
+                      key={id}
+                      className="flex-1 h-1.5 bg-gray-400 rounded-md"
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ))}
     </div>
   )
 }

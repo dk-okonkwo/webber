@@ -96,7 +96,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body
-        className="antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)] bg-bg-dark overflow-hidden h-svh w-vw flex items-center justify-center relative"
+        className="antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)] bg-bg-dark h-svh w-vw flex items-center justify-center relative"
         suppressHydrationWarning={true}
         style={{
           background: `url(${myBg})`,
@@ -120,7 +120,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </div> */}
 
         {/* Shell and Child 2 */}
-        <div className="w-full h-svh p-5 flex flex-col gap-4 overflow-hidden">
+        <div className="w-full h-svh p-4 flex flex-col gap-4">
           {/* header */}
           <header className="p-2 w-full flex items-center justify-between">
             <Button>Me</Button>

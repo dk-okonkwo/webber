@@ -15,8 +15,7 @@ import {
 
 import ResumeAssistant from '#/components/ResumeAssistant'
 import ProfileCard, { NewProfileCard } from '#/components/profile-card'
-import SkillsCard from '#/components/skills-card'
-import { hostname } from 'zod'
+import SkillsCard, { SkillsSection } from '#/components/skills-card'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -32,9 +31,12 @@ function App() {
 }
 
 function Home() {
-  return <div className='bg-purple-200 w-full flex gap-4 justify-center'>
-    <NewProfileCard/>
-  </div>
+  return (
+    <div className="w-full flex flex-wrap gap-15 justify-around">
+      <NewProfileCard />
+      <SkillsSection />
+    </div>
+  )
 }
 
 // function App() {

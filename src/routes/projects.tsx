@@ -9,7 +9,7 @@ export const Route = createFileRoute('/projects')({
 
 function RouteComponent() {
   return (
-    <div className="w-full h-full flex flex-col items-center gap-5 overflow-hidden overflow-y-auto p-4 pb-6 md:px-40 mx-auto md:mt-4 md:gap-19">
+    <div className="w-full h-full flex flex-col items-center gap-5 p-4 pb-6 md:px-40 mx-auto md:mt-4 md:gap-19">
       {MyProjects.map((project, i) => (
         <div
           key={i}
